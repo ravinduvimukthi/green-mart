@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Customer Login | Groco</title>
+    <title>Customer Login | Green Mart</title>
 
     <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="../assets/css/auth.css">
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="auth-container">
 
         <a href="../index.php" class="logo auth-brand">
-            Groco<span>.</span>
+            Green Mart<span>.</span>
         </a>
 
         <div class="auth-card">
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <h1>Welcome Back!</h1>
 
             <p class="auth-description">
-                Login to your Groco account.
+                Login to your Green Mart account.
             </p>
 
             <?php if ($error !== ""): ?>

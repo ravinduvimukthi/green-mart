@@ -1,10 +1,10 @@
-# Groco — Grocery E-Commerce System
+# Green Mart — Grocery E-Commerce System
 
 A grocery e-commerce web application developed as a learning and portfolio project to demonstrate web development, database management, and Git workflows.
 
 ## Project Overview
 
-Groco aims to provide a convenient online platform where customers can explore grocery products and, as development progresses, manage shopping carts and orders.
+Green Mart aims to provide a convenient online platform where customers can explore grocery products and, as development progresses, manage shopping carts and orders.
 
 ## Technologies
 

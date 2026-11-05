@@ -23,7 +23,7 @@ $customerName = $_SESSION["user_name"];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Dashboard | Groco</title>
+    <title>My Dashboard | Green Mart</title>
 <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="../assets/css/account.css">
 </head>
@@ -36,7 +36,7 @@ $customerName = $_SESSION["user_name"];
         <aside class="dashboard-sidebar">
 
             <a href="../index.php" class="logo">
-                Groco<span>.</span>
+                Green Mart<span>.</span>
             </a>
 
             <p class="sidebar-label">MY ACCOUNT</p>
@@ -74,7 +74,7 @@ $customerName = $_SESSION["user_name"];
                 <div>
                     <p class="eyebrow">CUSTOMER DASHBOARD</p>
                     <h1>Welcome back, <?php echo htmlspecialchars($customerName); ?>!</h1>
-                    <p>Manage your Groco account and shopping activity.</p>
+                    <p>Manage your Green Mart account and shopping activity.</p>
                 </div>
 
                 <a href="../index.php" class="btn">
