@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Customer Login | Groco</title>
 
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/auth.css">
+<link rel="stylesheet" href="../assets/css/auth.css">
 </head>
 
 <body class="auth-page">

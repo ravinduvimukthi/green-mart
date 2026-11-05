@@ -187,7 +187,6 @@ header {
 }
 
 header h1 {
-  color: var(--primary-color);
   font-size: 2rem;
 }
 
@@ -202,14 +201,13 @@ section {
 
 section h2 {
   margin-bottom: 12px;
-  color: var(--text-color);
 }
 
 section a {
   display: inline-block;
   margin-top: 18px;
   padding: 10px 22px;
-  background: var(--primary-color);
+
   color: var(--white);
   border-radius: 6px;
 }
