@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Create Account | Groco</title>
+    <title>Create Account | Green Mart</title>
 
     <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="../assets/css/auth.css">
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="auth-container">
 
         <a href="../index.php" class="logo auth-brand">
-            Groco<span>.</span>
+            Green Mart<span>.</span>
         </a>
 
         <div class="auth-card">
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <h1>Create Account</h1>
 
             <p class="auth-description">
-                Join Groco and enjoy convenient grocery shopping.
+                Join Green Mart and enjoy convenient grocery shopping.
             </p>
 
             <?php if (!empty($errors)): ?>

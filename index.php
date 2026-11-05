@@ -1,6 +1,6 @@
 
 <?php
-$pageTitle = "Groco | Fresh Groceries";
+$pageTitle = "Green Mart | Fresh Groceries";
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ $pageTitle = "Groco | Fresh Groceries";
 
     <meta
         name="description"
-        content="Discover fresh groceries, fruits and vegetables at Groco."
+        content="Discover fresh groceries, fruits and vegetables at Green Mart."
     >
 
     <title><?php echo htmlspecialchars($pageTitle); ?></title>
@@ -28,7 +28,7 @@ $pageTitle = "Groco | Fresh Groceries";
         <nav class="navbar container" aria-label="Main navigation">
 
             <a class="logo" href="index.php">
-                Groco<span>.</span>
+                Green Mart<span>.</span>
             </a>
 
             <ul class="nav-links">
@@ -186,7 +186,7 @@ $pageTitle = "Groco | Fresh Groceries";
         </section>
 
         <section class="content-section container" id="about">
-            <h2>About Groco</h2>
+            <h2>About Green Mart</h2>
             <p>Your everyday grocery shopping destination.</p>
         </section>
 
@@ -194,7 +194,7 @@ $pageTitle = "Groco | Fresh Groceries";
 
     <footer class="site-footer">
         <p>
-            &copy; <?php echo date("Y"); ?> Groco.
+            &copy; <?php echo date("Y"); ?> Green Mart.
             All rights reserved.
         </p>
     </footer>
