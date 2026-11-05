@@ -1,0 +1,276 @@
+/* ===== Customer Dashboard ===== */
+
+.account-page {
+  background: #f5f8f5;
+}
+
+.dashboard-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+}
+
+/* Sidebar */
+
+.dashboard-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 22px;
+  background: #ffffff;
+  border-right: 1px solid var(--border);
+}
+
+.sidebar-label {
+  margin-top: 45px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.dashboard-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dashboard-nav a,
+.logout-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.dashboard-nav a:hover,
+.dashboard-nav a.active {
+  background: #edf8ef;
+  color: var(--primary);
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.logout-link:hover {
+  background: #fff0f0;
+  color: #d33;
+}
+
+/* Main Content */
+
+.dashboard-main {
+  width: 100%;
+  max-width: 1250px;
+  margin-inline: auto;
+  padding: 40px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  margin-bottom: 8px;
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.dashboard-header > div > p:last-child {
+  color: var(--muted);
+}
+
+/* Dashboard Cards */
+
+.dashboard-section {
+  margin-bottom: 36px;
+}
+
+.dashboard-section h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.dashboard-card,
+.profile-card,
+.empty-state {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--white);
+}
+
+.dashboard-card-icon {
+  margin-bottom: 16px;
+  font-size: 28px;
+}
+
+.dashboard-card > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.dashboard-card h3 {
+  margin: 8px 0;
+  font-size: 28px;
+}
+
+.dashboard-card > span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Profile */
+
+.profile-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.profile-label {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.profile-card h3 {
+  font-size: 17px;
+}
+
+.profile-note {
+  grid-column: 1 / -1;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Empty Orders */
+
+.empty-state {
+  padding: 45px 20px;
+  text-align: center;
+}
+
+.empty-state-icon {
+  margin-bottom: 12px;
+  font-size: 40px;
+}
+
+.empty-state h3 {
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  margin-bottom: 20px;
+  color: var(--muted);
+}
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+  .dashboard-layout {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .dashboard-main {
+    padding: 28px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-sidebar {
+    padding: 18px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-label,
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .dashboard-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .dashboard-nav a {
+    padding: 9px;
+    font-size: 12px;
+  }
+
+  .dashboard-main {
+    padding: 22px 16px;
+  }
+
+  .dashboard-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-note {
+    grid-column: auto;
+  }
+}
+
+/* ===== Dashboard Style Protection ===== */
+
+.account-page header,
+.account-page main,
+.account-page section,
+.account-page footer {
+  border-radius: 0;
+}
+
+.account-page .dashboard-header {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.account-page .dashboard-main {
+  min-width: 0;
+}
+
+.account-page .dashboard-section a {
+  margin-top: 0;
+  border-radius: 6px;
+}
+
+.account-page .dashboard-section .btn {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.account-page .dashboard-section .btn:hover {
+  background: var(--primary-dark);
+}
