@@ -6,6 +6,7 @@ $pageTitle = "Groco | Fresh Groceries";
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -93,8 +94,6 @@ $pageTitle = "Groco | Fresh Groceries";
 
             </div>
         </section>
-
-        <!-- Placeholder sections for future features -->
         
 <!-- Product Categories -->
 <section class="content-section container" id="categories">

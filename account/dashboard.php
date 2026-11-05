@@ -5,12 +5,11 @@ session_start();
 
 if (
     !isset($_SESSION["user_id"]) ||
-    $_SESSION["user_role"] !== "customer"
+    ($_SESSION["user_role"] ?? "") !== "customer"
 ) {
     header("Location: login.php");
     exit;
 }
-
 $customerName = $_SESSION["user_name"];
 
 ?>
@@ -19,6 +18,8 @@ $customerName = $_SESSION["user_name"];
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/account.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

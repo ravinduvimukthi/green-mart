@@ -7,7 +7,7 @@
 .dashboard-layout {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 250px minmax(0, 1fr);
 }
 
 /* Sidebar */
@@ -185,7 +185,7 @@
 
 @media (max-width: 900px) {
   .dashboard-layout {
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 200px minmax(0, 1fr);
   }
 
   .dashboard-main {
@@ -193,7 +193,7 @@
   }
 
   .dashboard-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -273,4 +273,20 @@
 
 .account-page .dashboard-section .btn:hover {
   background: var(--primary-dark);
+}
+.dashboard-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+}
+.dashboard-nav a,
+.logout-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
