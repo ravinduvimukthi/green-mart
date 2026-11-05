@@ -17,6 +17,7 @@ $pageTitle = "Groco | Fresh Groceries";
     <title><?php echo htmlspecialchars($pageTitle); ?></title>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    
 </head>
 
 <body>
