@@ -3,6 +3,45 @@
 $pageTitle = "Green Mart | Fresh Groceries";
 ?>
 
+<?php
+
+require_once __DIR__ . "/includes/database.php";
+
+try {
+    $stmt = $pdo->prepare("
+        SELECT
+            products.id,
+            products.name,
+            products.slug,
+            products.description,
+            products.price,
+            products.stock_quantity,
+            products.image,
+            categories.name AS category_name
+        FROM products
+        INNER JOIN categories
+            ON products.category_id = categories.id
+        WHERE products.is_active = 1
+          AND categories.is_active = 1
+        ORDER BY products.created_at DESC
+    ");
+
+    $stmt->execute();
+
+    $products = $stmt->fetchAll();
+
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    $products = [];
+}
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +56,7 @@ $pageTitle = "Green Mart | Fresh Groceries";
 
     <title><?php echo htmlspecialchars($pageTitle); ?></title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+
     
 </head>
 
@@ -123,7 +162,9 @@ $pageTitle = "Green Mart | Fresh Groceries";
 
 
        
+
 <section class="content-section container" id="products">
+
     <div class="section-heading">
         <p class="eyebrow">OUR SELECTION</p>
         <h2>Featured Products</h2>
@@ -132,58 +173,61 @@ $pageTitle = "Green Mart | Fresh Groceries";
 
     <div class="product-grid">
 
-        <article class="product-card">
-            <img src="assets/images/apples.png" alt="Fresh red apples">
-            <div class="product-info">
-                <p class="product-category">Fruits</p>
-                <h3>Fresh Apples</h3>
-                <p class="product-price">Rs. 450 / kg</p>
-                <button class="btn" type="button" disabled>
-                    Add to Cart — Coming Soon
-                </button>
-            </div>
-        </article>
+        <?php if (!empty($products)): ?>
 
-        <article class="product-card">
-            <img src="assets/images/bananas.png" alt="Fresh bananas">
-            <div class="product-info">
-                <p class="product-category">Fruits</p>
-                <h3>Fresh Bananas</h3>
-                <p class="product-price">Rs. 280 / kg</p>
-                <button class="btn" type="button" disabled>
-                    Add to Cart — Coming Soon
-                </button>
-            </div>
-        </article>
+            <?php foreach ($products as $product): ?>
 
-        <article class="product-card">
-            <img src="assets/images/carrots.png" alt="Fresh carrots">
-            <div class="product-info">
-                <p class="product-category">Vegetables</p>
-                <h3>Fresh Carrots</h3>
-                <p class="product-price">Rs. 320 / kg</p>
-                <button class="btn" type="button" disabled>
-                    Add to Cart — Coming Soon
-                </button>
-            </div>
-        </article>
+                <article class="product-card">
 
-        <article class="product-card">
-            <img src="assets/images/milk.png" alt="A bottle of fresh milk">
-            <div class="product-info">
-                <p class="product-category">Dairy</p>
-                <h3>Fresh Milk</h3>
-                <p class="product-price">Rs. 500 / litre</p>
-                <button class="btn" type="button" disabled>
-                    Add to Cart — Coming Soon
-                </button>
-            </div>
-        </article>
+                    <img
+                        src="<?php echo htmlspecialchars($product['image'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                        alt="<?php echo htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8'); ?>"
+                    >
+
+                    <div class="product-info">
+
+                        <p class="product-category">
+                            <?php echo htmlspecialchars($product['category_name'], ENT_QUOTES, 'UTF-8'); ?>
+                        </p>
+
+                        <h3>
+                            <?php echo htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8'); ?>
+                        </h3>
+
+                        <p class="product-price">
+                            Rs. <?php echo number_format((float) $product['price'], 2); ?>
+                        </p>
+
+                        <?php if ((int) $product['stock_quantity'] > 0): ?>
+
+                            <button class="btn" type="button" disabled>
+                                Add to Cart — Coming Soon
+                            </button>
+
+                        <?php else: ?>
+
+                            <button class="btn" type="button" disabled>
+                                Out of Stock
+                            </button>
+
+                        <?php endif; ?>
+
+                    </div>
+
+                </article>
+
+            <?php endforeach; ?>
+
+        <?php else: ?>
+
+            <p>No products are currently available.</p>
+
+        <?php endif; ?>
 
     </div>
 
+</section>
 
-        </section>
 
         <section class="content-section container" id="about">
             <h2>About Green Mart</h2>
